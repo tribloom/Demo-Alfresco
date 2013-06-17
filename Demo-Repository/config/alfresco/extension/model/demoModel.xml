@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="dm:demomodel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+	<description>Demo Content Model</description>
+	<author>Tribloom - Michael McCarthy</author>
+	<version>1.0</version>
+
+	<imports>
+		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
+		<import uri="http://www.alfresco.org/model/system/1.0" prefix="sys" />
+		<import uri="http://www.alfresco.org/model/datalist/1.0" prefix="dl" />
+		
+	</imports>
+
+	<namespaces>
+		<namespace uri="http://www.tribloom.com/model/demo/1.0"
+			prefix="dm" />
+	</namespaces>
+
+</model>

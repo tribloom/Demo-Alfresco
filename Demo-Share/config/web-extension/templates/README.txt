@@ -1,0 +1,1 @@
+This directory is where Surf page templates go (usually Freemarker templates).

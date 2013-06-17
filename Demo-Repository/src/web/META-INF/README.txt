@@ -1,0 +1,1 @@
+This is where your JSF config file will go "faces-config.xml".

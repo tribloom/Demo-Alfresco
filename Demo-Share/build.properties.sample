@@ -1,0 +1,6 @@
+alfresco.sdk.remote.dir=C:/Alfresco/Alfresco-SDK-3.4.0/lib/remote
+alfresco.sdk.server.dir=C:/Alfresco/Alfresco-SDK-3.4.0/lib/server
+alfresco.web.dir=c:/alfresco/tomcat/webapps/share
+alfresco.mmt.dir=c:/alfresco/bin
+alfresco.war.path=c:/alfresco/tomcat/webapps/share.war
+yui-compressor=c:/alfresco/yuicompressor-2.4.2.jar
