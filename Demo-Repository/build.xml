@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Demo Customizing the Alfresco Repository" default="deploy" basedir=".">
+<project name="Demo Alfresco Repository Extension" default="deploy" basedir=".">
+
 	<property file="build.properties" />
-	<property name="project.name" value="demo-alfresco-repo" />
-    <property name="module.id" value="com.tribloom.demo.module.repository" />
 
 	<property name="project.dir" value="." />
 	<property name="build.dir" value="${project.dir}/build" />
@@ -44,10 +43,10 @@
 	<target name="package-extension" depends="setup, package-jar" description="Creates a zip called ${package.file.zip} which can be unzipped on top of an exploded Alfresco web app">
 		<delete file="${package.file.zip}" />
 		<zip destfile="${package.file.zip}" update="true">
-			<zipfileset dir="${config.dir}${extension.dir}" prefix="WEB-INF/classes${extension.dir}" />
+			<zipfileset dir="${config.dir}${extension.dir}" prefix="WEB-INF/classes${extension.dir}" excludes="**/README.txt" />
 			<zipfileset file="${package.file.jar}" prefix="WEB-INF/lib" />
-			<zipfileset dir="${lib.dir}" includes="**/*.jar" prefix="WEB-INF/lib" />
-			<zipfileset dir="${web.dir}" excludes="META-INF/**" />
+			<zipfileset dir="${lib.dir}" includes="**/*.jar" prefix="WEB-INF/lib" excludes="**/README.txt" />
+			<zipfileset dir="${web.dir}" excludes="META-INF/**,**/README.txt" />
 		</zip>
 	</target>
 	
@@ -56,12 +55,12 @@
 		<zip destfile="${package.file.amp}">
 			<zipfileset file="${package.file.jar}" prefix="lib" />
 			<zipfileset file="${lib.dir}/**" prefix="lib" />
-			<zipfileset dir="${web.dir}" prefix="web" />
+			<zipfileset dir="${web.dir}" prefix="web" excludes="**/README.txt" />
 			<zipfileset file="${config.dir}${module.dir}/${module.id}/module.properties" />						
 			<zipfileset file="${config.dir}${module.dir}/${module.id}/file-mapping.properties" />
 			<zipfileset file="${config.dir}${module.dir}/${module.id}/module-context.xml" prefix="config${module.dir}/${module.id}" />
 			<zipfileset file="${config.dir}/**" prefix="config" />
-			<zipfileset dir="${data.dir}" prefix="config${module.dir}/${module.id}/bootstrap" />
+			<zipfileset dir="${data.dir}" prefix="config${module.dir}/${module.id}/bootstrap" excludes="**/README.txt" />
 			<!--zipfileset dir="${config.dir}${extension.dir}/model" prefix="config${module.dir}/${module.id}/model" /-->
 			<zipfileset file="${config.dir}${extension.dir}/demo-model-context.xml" prefix="config${module.dir}/${module.id}" />
 			<zipfileset file="${config.dir}${extension.dir}/web-client-config-custom.xml" prefix="config${module.dir}/${module.id}/ui" />			
